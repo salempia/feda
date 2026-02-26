@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+:root{
+  --hm-bg: #F2F1EF;
+  --hm-text: #5B4B46;
+
+  --hm-surface: #FFFFFF;
+  --hm-surface-2: #F7F6F4;
+  --hm-border: #DAD5D0;
+  --hm-muted: #6B5E59;
+
+  --hm-primary: #4F46E5;
+  --hm-primary-hover: #4338CA;
+
+  --hm-coral: #F07B63;
+  --hm-lime: #D6DE3A;
+  --hm-pink: #E85B73;
+
+  --hm-line: #CFC8C3;
+  --hm-card: #FFFFFF;
+}
+.hope-serif{ font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
