@@ -58,16 +58,6 @@ type TimelineProps = { items: TimelineItem[] };
 
 type AvatarProps = { name: string; subtitle?: string; badge?: string };
 
-type HopeMapProfileBlockProps = {
-  name: string;
-  concern: string;
-  childAge: string;
-  diagnosisAge: string;
-  language: string;
-  livesIn: string;
-  trackTitle: string;
-  bullets: string[];
-};
 
 function Pill({ children }: PropsWithChildren) {
   return (
@@ -199,110 +189,6 @@ function Avatar({ name, subtitle, badge }: AvatarProps) {
   );
 }
 
-function HopeMapProfileBlock({
-  name,
-  concern,
-  childAge,
-  diagnosisAge,
-  language,
-  livesIn,
-  trackTitle,
-  bullets,
-}: HopeMapProfileBlockProps) {
-  return (
-    <section className="bg-[var(--hm-bg)]">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          {/* Left: Profile */}
-          <div>
-            <div className="flex items-center gap-5">
-              <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
-                alt={name}
-                className="h-20 w-20 rounded-full object-cover"
-              />
-              <div>
-                <div className="text-4xl font-semibold hope-serif text-[var(--hm-text)]">
-                  {name}
-                </div>
-                <div className="mt-1 flex items-center gap-2 text-lg text-[var(--hm-text)]">
-                  <span className="text-2xl">⛓</span>
-                  <span>my hope map</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 rounded-[44px] bg-[var(--hm-lime)] px-10 py-10 text-[var(--hm-text)]">
-              <div className="space-y-6 text-lg">
-                <div>
-                  <span className="font-semibold">Child Age:</span> {childAge}
-                </div>
-                <div>
-                  <span className="font-semibold">Age of Diagnosis:</span> {diagnosisAge}
-                </div>
-                <div>
-                  <span className="font-semibold">Language:</span> {language}
-                </div>
-                <div>
-                  <span className="font-semibold">Lives in:</span> {livesIn}
-                </div>
-              </div>
-
-              <div className="mt-10 text-lg">
-                <div className="font-semibold">I have questions about my child's</div>
-                <div className="mt-3 flex items-center gap-3">
-                  <span className="text-2xl leading-none">•</span>
-                  <span>{concern}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Welcome + stepper + recommended track */}
-          <div className="pt-2">
-            <div className="text-center text-5xl font-semibold hope-serif text-[var(--hm-coral)]">
-              Glad you&apos;re here!
-            </div>
-
-            <div className="mx-auto mt-10 grid max-w-md grid-cols-[48px_1fr] gap-x-6 gap-y-10">
-              <div className="relative flex flex-col items-center">
-                <div className="absolute top-6 h-[calc(100%-24px)] w-[2px] bg-[var(--hm-line)]" />
-                {["Autism awareness", "Join Hope Map", "Seek help & support"].map((label) => (
-                  <div
-                    key={label}
-                    className="relative z-10 mb-10 grid h-10 w-10 place-items-center rounded-full bg-[var(--hm-lime)]"
-                  >
-                    <span className="text-lg">✓</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-10 pt-1 text-2xl text-[var(--hm-text)]">
-                <div>Autism awareness</div>
-                <div>Join Hope Map</div>
-                <div>Seek help &amp; support</div>
-              </div>
-            </div>
-
-            <div className="mx-auto mt-10 max-w-xl overflow-hidden bg-[var(--hm-card)] shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-              <div className="bg-[var(--hm-pink)] px-8 py-4 text-2xl font-semibold text-white">
-                Recommended Track
-              </div>
-              <div className="px-8 py-6">
-                <div className="text-2xl font-semibold text-[var(--hm-coral)]">{trackTitle}</div>
-                <ul className="mt-4 list-disc space-y-2 pl-6 text-xl text-[var(--hm-text)]">
-                  {bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function App() {
   const [query, setQuery] = useState("");
@@ -1209,4 +1095,3 @@ export default function App() {
     </div>
   );
 }
-
